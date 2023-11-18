@@ -1,7 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for, flash, Response
 from datetime import datetime, date, timedelta
 import os
 from dotenv import load_dotenv
+from supabase import create_client, Client
+import pandas as pd
+
 
 load_dotenv()
 
@@ -19,8 +22,18 @@ def index():
 
 @app.route("/companies-data")
 def companies_data():
-    companies = supabase.table('companies').select("name", "size", "industry").execute()
-    return render_template("companies-data.html", title="Companies", companies=companies.get('data'))
+    response = supabase.table('raw_companies_database').select("name", "size", "industry", "website").execute()
+
+    # Access the data from the response
+    companies_data = response.data
+
+    # Check if companies_data is not empty or None
+    if not companies_data:
+        print("No data found.")
+        return "No data found."
+
+    # Pass the data to the template
+    return render_template("companies-data.html", title="Companies", companies=companies_data)
 
 @app.context_processor
 def inject_current_datetime():
