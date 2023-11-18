@@ -1,0 +1,99 @@
+<nav class="navbar navbar-expand-lg  bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand ms-3" href="{{ url_for('index') }}">
+        <i class="bi bi-bank" style="font-size: larger;"></i>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- First Navbar Button -->
+        <li class="nav-item">
+          <a class="nav-link {% if request.endpoint == 'index' %}active{% endif %}" aria-current="page"
+            href="{{ url_for('index') }}">Home</a>
+        </li>
+        <!-- The end of first part of navbar -->
+      </ul>
+
+      <div class="vr mx-2"></div>
+
+      <div class="btn-group pe-2 ps-3">
+        <button id="themeToggle" class="btn btn-subtle-primary rounded-5 p-2 lh-1">
+          <i id="themeIcon" class="bi bi-sun"></i>
+        </button>
+
+      </div>
+
+      <div class="btn-group pe-2 ps-2 ">
+        <button type="button" class="btn btn-subtle-primary rounded-5 p-2 lh-1" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <i class="bi bi-highlights"></i>
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-lg-end">
+          <div class="dropdown-header">
+            <i class="bi bi-grip-horizontal"></i>
+          </div>
+          <div class="m-2">
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item rounded-2{% if request.endpoint == 'index' %}active{% endif %}"
+                href="{{ url_for('companies_data') }}"><i class="bi bi-shadows me-2"></i>Companies</a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-2{% if request.endpoint == 'logs' %}active{% endif %}"
+                href="#"><i class="bi bi-terminal me-2"></i>Logs</a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item rounded-2{% if request.endpoint == 'chat_model' %}active{% endif %}"
+                href="#"><i class="bi bi-wechat me-2"></i>ChatGPT</a>
+            </li>
+          </div>
+        </ul>
+      </div>
+
+      <div class="btn-group pe-3 ps-2">
+        <button type="button" class="btn btn-subtle-primary rounded-5 p-2 lh-1" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <i class="bi bi-person"></i>
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-lg-end">
+
+          <div class="dropdown-header">
+            <span class="d-block text-sm text-muted mb-1">Signed in as:</span>
+            <span class="d-block text-heading fw-semibold">user@email.com</span>
+          </div>
+
+          <div class="m-2">
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item rounded-2{% if request.endpoint == 'dashboard' %}active{% endif %}"
+                href="#"><i class="bi bi-person me-2"></i>Profile</a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-2" href="#"><i class="bi bi-gear me-2"></i>Settings</a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item rounded-2 dropdown-item-danger d-flex gap-2 align-items-center"
+                href="#"><i class="bi bi-box-arrow-in-left"></i> Logout</a>
+            </li>
+          </div>
+
+        </ul>
+      </div>
+    </div>
+</nav>
+
