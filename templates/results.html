@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-5">
+    <h2>Search Results</h2>
+    <p><em>Top 5 Companies</em></p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Industry</th>
+                <th>Description</th>
+                <th>Website</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for company in companies %}
+            <tr>
+                <td>{{ company.name }}</td>
+                <td>{{ company.size }}</td>
+                <td>{{ company.industry }}</td>
+                <td>{{ company.description }}</td>
+                <td><a href="{{ company.website }}" target="_blank">{{ company.website }}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

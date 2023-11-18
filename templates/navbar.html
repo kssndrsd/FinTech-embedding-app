@@ -12,7 +12,7 @@
         <!-- First Navbar Button -->
         <li class="nav-item">
           <a class="nav-link {% if request.endpoint == 'index' %}active{% endif %}" aria-current="page"
-            href="{{ url_for('index') }}">Home</a>
+            href="{{ url_for('home') }}">Home</a>
         </li>
         <!-- The end of first part of navbar -->
       </ul>
@@ -45,15 +45,15 @@
                 href="{{ url_for('companies_data') }}"><i class="bi bi-shadows me-2"></i>Companies</a>
             </li>
             <li>
-              <a class="dropdown-item rounded-2{% if request.endpoint == 'logs' %}active{% endif %}"
-                href="#"><i class="bi bi-terminal me-2"></i>Logs</a>
-            </li>
-            <li>
               <hr class="dropdown-divider">
             </li>
             <li>
               <a class="dropdown-item rounded-2{% if request.endpoint == 'chat_model' %}active{% endif %}"
-                href="#"><i class="bi bi-wechat me-2"></i>ChatGPT</a>
+                href="{{ url_for('alike') }}"><i class="bi bi-home me-2"></i>M&A Finder</a>
+            </li>
+            <li>
+              <a class="dropdown-item rounded-2{% if request.endpoint == 'chat_model' %}active{% endif %}"
+                href="{{ url_for('index') }}"><i class="bi bi-home me-2"></i>Search Companies</a>
             </li>
           </div>
         </ul>
