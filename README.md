@@ -98,3 +98,15 @@ supabase: Client = create_client(url, key)
 ```
 It loads environment variables for the Supabase client using dotenv.
 
+---
+
+Usage and Licensing
+
+This repository contains code developed for portfolio demonstration purposes. While the source code is available publicly for viewing and reference, the following restrictions apply:
+
+No Unauthorized Use: The code in this repository is not intended for free use, copying, distribution, or incorporation into other projects or tools without explicit written permission from the authors.
+Portfolio Display Only: The primary purpose of making this code public is for display in the author's professional portfolio. It serves to showcase the skills and coding style of the authors.
+Contact for Permissions: If you are interested in using any part of this code, please contact the authors directly to discuss potential use cases and obtain permission.
+We encourage open-source collaboration and sharing of knowledge but also value the protection of intellectual property and creative rights.
+
+---
