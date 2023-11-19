@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <h1>Merger Comparison</h1>
+    <div class="row">
+        <div class="col-6">
+            <div class="bg-body-tertiary p-5 m-3 rounded-4">
+                <form class="row g-3">
+                    <h2>Alike Company</h2>
+                    <div class="col-md-6">
+                      <label for="inputEmail4" class="form-label">Company Name</label>
+                      <input type="text" class="form-control" id="inputEmail4" placeholder="Google" disabled>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputPassword4" class="form-label">Country</label>
+                      <input type="text" class="form-control" id="inputPassword4" placeholder="USA" disabled>
+                    </div>
+                    <div class="col-12">
+                      <label for="inputAddress" class="form-label">Company type</label>
+                      <input type="text" class="form-control" id="inputAddress" placeholder="LLC" disabled>
+                    </div>
+                    <div class="col-12">
+                      <label for="inputAddress2" class="form-label">Headquarters</label>
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="Califormia 12" disabled>
+                    </div>
+                    <div class="col-md-12">
+                      <label for="inputCity" class="form-label">description</label>
+                      <textarea type="textarea" class="form-control" id="inputCity" placeholder="this is the tech company that mainly makes money from ads through their search engine" disabled>this is the tech company that mainly makes money from ads through their search engine</textarea>
+                    </div>  
+                  </form>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="bg-body-tertiary p-5 m-3 rounded-4">
+                <form class="row g-3">
+                    <h2>Your Company</h2>
+                    <div class="col-md-6">
+                      <label for="inputEmail4" class="form-label">Company Name</label>
+                      <input type="text" class="form-control" id="inputEmail4" >
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputPassword4" class="form-label">Country</label>
+                      <input type="text" class="form-control" id="inputPassword4" >
+                    </div>
+                    <div class="col-12">
+                      <label for="inputAddress" class="form-label">Company type</label>
+                      <input type="text" class="form-control" id="inputAddress" >
+                    </div>
+                    <div class="col-12">
+                      <label for="inputAddress2" class="form-label">Headquarters</label>
+                      <input type="text" class="form-control" id="inputAddress2" >
+                    </div>
+                    <div class="col-md-12">
+                      <label for="inputCity" class="form-label">description</label>
+                      <textarea type="textarea" class="form-control" id="inputCity"></textarea>
+                    </div>  
+                  </form>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary">Compare</button>
+    </div>
+</div>
+
+{% endblock %}

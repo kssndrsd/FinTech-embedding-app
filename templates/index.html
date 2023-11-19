@@ -2,24 +2,15 @@
 {% block content %}
 
 
-<div class="d-flex align-items-end justify-content-between mb-4">
-  <div>
-    <h2 class="fw-semibold mb-1">Start-Find</h2>
-    <p class="text-sm text-muted">Software that let's you find startup for M&A</p>
-  </div>
-  <div>
-    <button type="button" class="btn btn-outline-primary btn-sm">
-      <i class="bi bi-plus-lg me-2 fw-bold"></i>New Search
-    </button>
-  </div>
-</div>
-
-<div class="p-5 mb-4 rounded-3 bg-body-tertiary mt-5">
-  <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">Start-Find Software</h1>
-        <br />
-        <a href="#" class="btn btn-outline-primary">Solutions</a>
-  </div>
+<div class="container mt-5">
+  <h2>Search for Companies</h2>
+  <form method="POST" action="/search_companies">
+      <div class="mb-3">
+          <label for="inputedText" class="form-label">Enter Description:</label>
+          <textarea class="form-control" id="inputedText" name="inputed_text" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+  </form>
 </div>
 
 {% endblock %}
