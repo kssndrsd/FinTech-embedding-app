@@ -9,6 +9,7 @@
                 <th>Name</th>
                 <th>Size</th>
                 <th>Industry</th>
+                <th>Description</th>
                 <th>Link</th>
             </tr>
         </thead>
@@ -18,6 +19,7 @@
                     <td>{{ company['name'] }}</td>
                     <td>{{ company['size'] }}</td>
                     <td>{{ company['industry'] }}</td>
+                    <td>{{ company['description'] }}</td>
                     <td><a href="{{ company['website'] }}" target="_blank">{{ company['website'] }}</a></td>
                 </tr>
             {% endfor %}

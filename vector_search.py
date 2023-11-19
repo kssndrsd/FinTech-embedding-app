@@ -14,10 +14,8 @@ supabase: Client = create_client(url, key)
 opeani_key = url = os.environ.get('OPENAI_KEY')
 client = OpenAI(api_key=opeani_key)
 
-inputed_text = 'company that is based in aarhus that works with bioengeniering, make the research on bio chemistry and creates the trials and drugs based on bio molecules'
-
 response = client.embeddings.create(
-    input=inputed_text,
+    input="text",
     model="text-embedding-ada-002"
 )
 
@@ -26,11 +24,9 @@ embedding = np.array(response.data[0].embedding).reshape(1, -1)
 def calculate_similarity(embedding, embeddings_list):
     similarities = cosine_similarity(embedding, embeddings_list)
     return similarities[0]
-  
 
 def convert_embedding(str_embedding):
     return np.fromstring(str_embedding.strip("[]"), sep=',', dtype=float)
-
 
 data = supabase.table("embedings").select("id, embedding").execute().data
 db_embeddings = np.array([row['embedding'] for row in data])

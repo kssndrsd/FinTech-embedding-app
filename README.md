@@ -1,13 +1,81 @@
-# GitHub Codespaces ♥️ Flask
+Overview
 
-Welcome to your shiny new Codespace running Flask! We've got everything fired up and running for you to explore Flask.
+This Flask application serves as an interface for searching and comparing company data using text embeddings. It leverages OpenAI's embeddings and a Supabase client for data storage and retrieval. The application allows users to search for companies by text input and find similar companies based on text embeddings.
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with the what you're seeing right now - where you go from here is up to you!
+Features
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+Company Search: Users can search for companies by entering text, and the application retrieves similar companies using OpenAI's text embeddings.
+Data Visualization: Displays company data including name, size, industry, website, and description.
+API Endpoints: Provides endpoints for retrieving similar company IDs and detailed company data.
 
-To run this application:
+Features & Code Snippets
 
-```
-flask --debug run
-```
+Company Search
+Users can input text to search for similar companies based on text embeddings provided by OpenAI.
+
+python
+Copy code
+@app.route('/search_companies', methods=['GET', 'POST'])
+def search_companies():
+    if request.method == 'POST':
+        # ...
+        response = client.embeddings.create(
+            input=inputed_text,
+            model="text-embedding-ada-002"
+        )
+        # ...
+This route handles the POST request for searching companies. It uses OpenAI's client to generate text embeddings from the user input.
+
+Similarity Calculation
+The application calculates the similarity between user input and stored company embeddings.
+
+python
+Copy code
+def calculate_similarity(embedding, embeddings_list):
+    similarities = cosine_similarity(embedding, embeddings_list)
+    return similarities[0]
+This function uses cosine similarity from scikit-learn to compute similarity scores between the input embedding and stored embeddings.
+
+Embedding Conversion
+Converts string embeddings stored in the database into numpy arrays.
+
+python'''
+Copy code
+def convert_embedding(str_embedding):
+    return np.fromstring(str_embedding.strip("[]"), sep=',', dtype=float)
+This utility function converts a string representation of an embedding from the database into a numpy array.
+'''
+
+API Endpoint for Similar Companies
+Provides an API endpoint to retrieve IDs of similar companies based on text input.
+
+python
+Copy code
+@app.route('/get_similar_ids', methods=['GET'])
+def get_similar_ids():
+    # ...
+    return jsonify(top_ids)
+This endpoint uses OpenAI's embeddings and stored data to find and return the top similar company IDs.
+
+Displaying Company Data
+Renders company data including details like name, size, industry, etc.
+
+python
+Copy code
+@app.route("/companies-data")
+def companies_data():
+    # ...
+    return render_template("companies-data.html", companies=companies_data)
+This route fetches company data from Supabase and displays it on a dedicated page.
+
+Environment Variables
+The application uses environment variables for API keys and database URLs.
+
+python
+Copy code
+load_dotenv()
+key = os.environ.get('SUPABASE_KEY')
+url = os.environ.get('SUPABASE_URL')
+supabase: Client = create_client(url, key)
+It loads environment variables for the Supabase client using dotenv.
+

@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-
 <div class="container">
     <h1>Merger Comparison</h1>
     <div class="row">
@@ -11,11 +10,11 @@
                     <h2>Alike Company</h2>
                     <div class="col-md-6">
                       <label for="inputEmail4" class="form-label">Company Name</label>
-                      <input type="email" class="form-control" id="inputEmail4" placeholder="Google" disabled>
+                      <input type="text" class="form-control" id="inputEmail4" placeholder="Google" disabled>
                     </div>
                     <div class="col-md-6">
                       <label for="inputPassword4" class="form-label">Country</label>
-                      <input type="password" class="form-control" id="inputPassword4" placeholder="USA" disabled>
+                      <input type="text" class="form-control" id="inputPassword4" placeholder="USA" disabled>
                     </div>
                     <div class="col-12">
                       <label for="inputAddress" class="form-label">Company type</label>
@@ -28,12 +27,9 @@
                     <div class="col-md-12">
                       <label for="inputCity" class="form-label">description</label>
                       <textarea type="textarea" class="form-control" id="inputCity" placeholder="this is the tech company that mainly makes money from ads through their search engine" disabled>this is the tech company that mainly makes money from ads through their search engine</textarea>
-                    </div>
-                    
+                    </div>  
                   </form>
             </div>
-            
-            
         </div>
         <div class="col-6">
             <div class="bg-body-tertiary p-5 m-3 rounded-4">
@@ -58,17 +54,12 @@
                     <div class="col-md-12">
                       <label for="inputCity" class="form-label">description</label>
                       <textarea type="textarea" class="form-control" id="inputCity"></textarea>
-                    </div>
-                    
+                    </div>  
                   </form>
             </div>
-            
-            
         </div>
-        
         <button type="button" class="btn btn-primary">Compare</button>
     </div>
-
 </div>
 
 {% endblock %}
