@@ -1,4 +1,5 @@
 __pycache__/
 
 .env
-.devcontainer/
+.devcontainer
+/workspaces/codespaces-flask/.devcontainer
