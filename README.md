@@ -1,4 +1,4 @@
-#Overview#
+Overview
 
 This Flask application serves as an interface for searching and comparing company data using text embeddings. It leverages OpenAI's embeddings and a Supabase client for data storage and retrieval. The application allows users to search for companies by text input and find similar companies based on text embeddings.
 
@@ -9,7 +9,7 @@ Data Visualization: Displays company data including name, size, industry, websit
 API Endpoints: Provides endpoints for retrieving similar company IDs and detailed company data.
 
 
-##Features & Code Snippets##
+Features & Code Snippets
 
 ---
 
