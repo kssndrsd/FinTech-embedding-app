@@ -8,7 +8,11 @@ Company Search: Users can search for companies by entering text, and the applica
 Data Visualization: Displays company data including name, size, industry, website, and description.
 API Endpoints: Provides endpoints for retrieving similar company IDs and detailed company data.
 
+---
+
 Features & Code Snippets
+
+
 
 Company Search
 Users can input text to search for similar companies based on text embeddings provided by OpenAI.
@@ -27,6 +31,8 @@ def search_companies():
 ```
 This route handles the POST request for searching companies. It uses OpenAI's client to generate text embeddings from the user input.
 
+---
+
 Similarity Calculation
 The application calculates the similarity between user input and stored company embeddings.
 
@@ -38,6 +44,8 @@ def calculate_similarity(embedding, embeddings_list):
 ```
 This function uses cosine similarity from scikit-learn to compute similarity scores between the input embedding and stored embeddings.
 
+---
+
 Embedding Conversion
 Converts string embeddings stored in the database into numpy arrays.
 
@@ -45,8 +53,10 @@ Converts string embeddings stored in the database into numpy arrays.
 Copy code
 def convert_embedding(str_embedding):
     return np.fromstring(str_embedding.strip("[]"), sep=',', dtype=float)
-This utility function converts a string representation of an embedding from the database into a numpy array.
 ```
+This utility function converts a string representation of an embedding from the database into a numpy array.
+
+---
 
 API Endpoint for Similar Companies
 Provides an API endpoint to retrieve IDs of similar companies based on text input.
@@ -60,6 +70,8 @@ def get_similar_ids():
 ```
 This endpoint uses OpenAI's embeddings and stored data to find and return the top similar company IDs.
 
+---
+
 Displaying Company Data
 Renders company data including details like name, size, industry, etc.
 
@@ -71,6 +83,8 @@ def companies_data():
     return render_template("companies-data.html", companies=companies_data)
 ```
 This route fetches company data from Supabase and displays it on a dedicated page.
+
+---
 
 Environment Variables
 The application uses environment variables for API keys and database URLs.
