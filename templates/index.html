@@ -5,6 +5,7 @@
 <div class="container mt-5">
   <h2>Search for Companies</h2>
   <form method="POST" action="/search_companies">
+    {{ form.hidden_tag() }}
       <div class="mb-3">
           <label for="inputedText" class="form-label">Enter Description:</label>
           <textarea class="form-control" id="inputedText" name="inputed_text" rows="3"></textarea>
