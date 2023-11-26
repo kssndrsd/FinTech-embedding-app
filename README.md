@@ -17,6 +17,11 @@ API Endpoints: Provides endpoints for retrieving similar company IDs and detaile
 
 ---
 
+[![Watch the video](https://img.youtube.com/vi/OduJuYjfnW4/0.jpg)](https://www.youtube.com/watch?v=OduJuYjfnW4)
+
+
+---
+
 This is how to load the clients for supabase and openai with python
 
 ```python
