@@ -16,6 +16,7 @@ API Endpoints: Provides endpoints for retrieving similar company IDs and detaile
 `python`, `flask`, `Bootstrap 5`, `OpenAI`, `Supabase`, 
 
 ---
+### Watch The Preview
 
 [![Watch the video](https://img.youtube.com/vi/OduJuYjfnW4/0.jpg)](https://www.youtube.com/watch?v=OduJuYjfnW4)
 
