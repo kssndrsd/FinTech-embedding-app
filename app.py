@@ -97,7 +97,3 @@ def companies_data():
 @app.route("/home")
 def home():
     return render_template("home.html")
-
-@app.route("/alike")
-def alike():
-    return render_template("alike.html")
